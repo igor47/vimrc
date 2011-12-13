@@ -1,3 +1,5 @@
+call pathogen#infect()
+
 set showcmd
 set mouse=a
 set tildeop
