@@ -56,6 +56,10 @@ nnoremap ` '
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 
+" close the completion window when the cursor moves
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
 " python settings
 let python_highlight_all=1
 let python_highlight_builtins=1
@@ -70,11 +74,15 @@ let processing_doc_path="/home/igor47/software/processing/modes/java/reference"
 
 " autocomplete funcs and identifiers for languages
 autocmd FileType python set omnifunc=pythoncomplete#Complete
+
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType php set makeprg=php\ -l\ %
+autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l
+
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 
 "arduino
