@@ -34,6 +34,9 @@ filetype indent on
 set autoindent
 set foldmethod=indent
 
+" reset folds with a single button (F5)
+map <F5> <ESC>:set foldmethod=indent<CR>zmzrzv
+
 " my tab/whitespace settings: 3 spaces per tab
 set tabstop=3
 set shiftwidth=3
@@ -47,14 +50,13 @@ set nolist
 let python_highlight_all=1
 let python_highlight_builtins=1
 let g:pyflakes_use_quickfix = 0  " turn off quickfix window for pyflakes
+let g:pep8_map='<leader>8'
 
+" php settings
 let php_folding = 0
 let php_strict_blocks = 0
 
 let processing_doc_path="/home/igor47/software/processing/modes/java/reference"
-
-" reset folds with a single button (F5)
-map <F5> <ESC>:set foldmethod=indent<CR>zmzrzv
 
 " autocomplete funcs and identifiers for languages
 autocmd FileType python set omnifunc=pythoncomplete#Complete
