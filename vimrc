@@ -46,6 +46,10 @@ set expandtab
 set list listchars=tab:>-,trail:-
 set nolist
 
+" for supertab: make it context sensitive
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
+
 " python settings
 let python_highlight_all=1
 let python_highlight_builtins=1
