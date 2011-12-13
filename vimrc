@@ -26,7 +26,7 @@ set scrolloff=3   " scroll before reaching the bottom
 set visualbell    " visual bell
 set showcmd       " show the command i'm about to use as i type it
 set tildeop       " ~ behaves like an operator 
-set shortmess=atI " shorten the interactive prompts a bit
+set shortmess+=filmnrxoOtT " shorten the interactive prompts a bit
 set history=1000  " longer command history
 set mouse=a
 
@@ -38,9 +38,6 @@ filetype indent on
 " turn on indentation
 set autoindent
 set foldmethod=indent
-
-" reset folds with a single button (F5)
-map <F5> <ESC>:set foldmethod=indent<CR>zmzrzv
 
 " my tab/whitespace settings: 3 spaces per tab
 set tabstop=3
@@ -82,3 +79,25 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 
 "arduino
 autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
+
+" help work with folds
+nmap <leader>f0 :set foldlevel=0<CR>
+nmap <leader>f1 :set foldlevel=1<CR>
+nmap <leader>f2 :set foldlevel=2<CR>
+nmap <leader>f3 :set foldlevel=3<CR>
+nmap <leader>f4 :set foldlevel=4<CR>
+nmap <leader>f5 :set foldlevel=5<CR>
+nmap <leader>f6 :set foldlevel=6<CR>
+nmap <leader>f7 :set foldlevel=7<CR>
+nmap <leader>f8 :set foldlevel=8<CR>
+nmap <leader>f9 :set foldlevel=9<CR>
+
+" reset folds with a single button (F5)
+map <F5> <ESC>:set foldmethod=indent<CR>zmzrzv
+
+" clear highlighted search
+nmap <silent> <leader>/ :nohlsearch<CR>
+
+" Wrapped lines goes down/up to next row, rather than next line in file.
+nnoremap j gj
+nnoremap k gk
