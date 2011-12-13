@@ -1,12 +1,19 @@
 "load pathogen, which will load all the other modules in bundle/
+let g:pathogen_disabled = []
+call add(g:pathogen_disabled, 'minibufexpl')
 call pathogen#infect()
-
-"switch ` and ' characters for moving to a save point
-nnoremap ' `
-nnoremap ` '
 
 " my <leader> character for custom commands
 let mapleader = ","
+"set rulerformat=%<%{fugitive#statusline()}:%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+
+"always enable theruler
+set ruler
+set rulerformat=%40(%=%{fugitive#statusline()}\:b%n%m%r%w\ %4l,%-7(%c%V%)\ %P%)
+
+" always disable laststatus
+set laststatus=0
+set statusline=%<%{fugitive#statusline()}:%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 set wildmenu      " change behavior of file tab completion 
 set wildmode=list:longest
@@ -45,6 +52,10 @@ set expandtab
 " the list
 set list listchars=tab:>-,trail:-
 set nolist
+
+"switch ` and ' characters for moving to a save point
+nnoremap ' `
+nnoremap ` '
 
 " for supertab: make it context sensitive
 let g:SuperTabDefaultCompletionType = "context"
