@@ -28,3 +28,6 @@
 [submodule "bundle/local-vimrc"]
 	path = bundle/local-vimrc
 	url = https://github.com/MarcWeber/vim-addon-local-vimrc
+[submodule "bundle/piv"]
+	path = bundle/piv
+	url = https://github.com/spf13/PIV

@@ -54,6 +54,7 @@ nnoremap ` '
 
 " for supertab: make it context sensitive
 let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 set completeopt=menuone,longest,preview
 
 " close the completion window when the cursor moves
@@ -65,20 +66,19 @@ let python_highlight_all=1
 let python_highlight_builtins=1
 let g:pyflakes_use_quickfix = 0  " turn off quickfix window for pyflakes
 let g:pep8_map='<leader>8'
+autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 " php settings
 let php_folding = 0
 let php_strict_blocks = 0
 
-let processing_doc_path="/home/igor47/software/processing/modes/java/reference"
-
-" autocomplete funcs and identifiers for languages
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-
+" php-specific stuff
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType php set makeprg=php\ -l\ %
 autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l
+autocmd FileType php let g:DisableAutoPHPFolding = 1
 
+" autocomplete funcs and identifiers for languages
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
@@ -87,6 +87,9 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 
 "arduino
 autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
+
+" processing
+let processing_doc_path="/home/igor47/software/processing/modes/java/reference"
 
 " help work with folds
 nmap <leader>f0 :set foldlevel=0<CR>
