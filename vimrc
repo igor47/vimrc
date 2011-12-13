@@ -8,12 +8,9 @@ let mapleader = ","
 "set rulerformat=%<%{fugitive#statusline()}:%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 "always enable theruler
+set laststatus=0  " always disable laststatus
 set ruler
 set rulerformat=%40(%=%{fugitive#statusline()}\:b%n%m%r%w\ %4l,%-7(%c%V%)\ %P%)
-
-" always disable laststatus
-set laststatus=0
-set statusline=%<%{fugitive#statusline()}:%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 set wildmenu      " change behavior of file tab completion 
 set wildmode=list:longest
@@ -23,7 +20,8 @@ set smartcase
 set hlsearch      " highlight as we search
 
 set title         " set windows title
-set hidden        "allows better buffer management
+set hidden        " allow hidden buffers
+set winminheight=0 " enable 0-height windows
 set scrolloff=3   " scroll before reaching the bottom
 set visualbell    " visual bell
 set showcmd       " show the command i'm about to use as i type it
