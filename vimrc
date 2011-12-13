@@ -23,30 +23,36 @@ set showcmd       " show the command i'm about to use as i type it
 set tildeop       " ~ behaves like an operator 
 set shortmess=atI " shorten the interactive prompts a bit
 set history=1000  " longer command history
-
 set mouse=a
 
+" automatically deal with files of different type
+syntax on
+filetype on
+filetype indent on
+
+" turn on indentation
+set autoindent
+set foldmethod=indent
+
+" my tab/whitespace settings: 3 spaces per tab
+set tabstop=3
+set shiftwidth=3
+set expandtab
+
+" the list
+set list listchars=tab:>-,trail:-
+set nolist
+
+" python settings
 let python_highlight_all=1
 let python_highlight_builtins=1
+let g:pyflakes_use_quickfix = 0  " turn off quickfix window for pyflakes
 
 let php_folding = 0
 let php_strict_blocks = 0
 
 let processing_doc_path="/home/igor47/software/processing/modes/java/reference"
 
-set list listchars=tab:>-,trail:-
-set nolist
-
-syntax on
-filetype on
-filetype indent on
-set autoindent
-
-set tabstop=3
-set shiftwidth=3
-set expandtab
-
-set foldmethod=indent
 " reset folds with a single button (F5)
 map <F5> <ESC>:set foldmethod=indent<CR>zmzrzv
 
