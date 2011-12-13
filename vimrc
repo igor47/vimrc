@@ -26,7 +26,6 @@ set history=1000  " longer command history
 
 set mouse=a
 
-syntax on
 let python_highlight_all=1
 let python_highlight_builtins=1
 
@@ -38,8 +37,10 @@ let processing_doc_path="/home/igor47/software/processing/modes/java/reference"
 set list listchars=tab:>-,trail:-
 set nolist
 
-set autoindent
+syntax on
+filetype on
 filetype indent on
+set autoindent
 
 set tabstop=3
 set shiftwidth=3
