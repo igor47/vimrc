@@ -58,7 +58,7 @@ let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 set completeopt=menuone,longest,preview
 
 " close the completion window when the cursor moves
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+" autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " python settings
