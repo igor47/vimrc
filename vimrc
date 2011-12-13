@@ -1,12 +1,30 @@
+"load pathogen, which will load all the other modules in bundle/
 call pathogen#infect()
 
-set showcmd
-set mouse=a
-set tildeop
+"switch ` and ' characters for moving to a save point
+nnoremap ' `
+nnoremap ` '
 
-set hlsearch
-set ic
-set scs
+" my <leader> character for custom commands
+let mapleader = ","
+
+set wildmenu      " change behavior of file tab completion 
+set wildmode=list:longest
+
+set ignorecase    " smart case searching
+set smartcase
+set hlsearch      " highlight as we search
+
+set title         " set windows title
+set hidden        "allows better buffer management
+set scrolloff=3   " scroll before reaching the bottom
+set visualbell    " visual bell
+set showcmd       " show the command i'm about to use as i type it
+set tildeop       " ~ behaves like an operator 
+set shortmess=atI " shorten the interactive prompts a bit
+set history=1000  " longer command history
+
+set mouse=a
 
 syntax on
 let python_highlight_all=1
