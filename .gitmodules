@@ -37,3 +37,6 @@
 [submodule "bundle/gsession"]
 	path = bundle/gsession
 	url = https://github.com/c9s/gsession.vim
+[submodule "bundle/matchparenpp"]
+	path = bundle/matchparenpp
+	url = https://github.com/vim-scripts/matchparenpp
