@@ -31,3 +31,6 @@
 [submodule "bundle/piv"]
 	path = bundle/piv
 	url = https://github.com/spf13/PIV
+[submodule "bundle/gesession"]
+	path = bundle/gesession
+	url = https://github.com/c9s/gsession.vim
