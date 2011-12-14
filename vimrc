@@ -10,7 +10,8 @@ let mapleader = ","
 "always enable theruler
 set laststatus=0  " always disable laststatus
 set ruler
-set rulerformat=%40(%=%{fugitive#statusline()}\:b%n%m%r%w\ %4l,%-7(%c%V%)\ %P%)
+set rulerformat=%36(%=%{fugitive#statusline()}\:b%n%m%r%w\ %4l,%-7(%c%V%)\ %P%)
+let MP_rulerwidth=36   "the matchparen plugin needs to know the width of the ruler
 
 set wildmenu      " change behavior of file tab completion 
 set wildmode=list:longest
@@ -52,15 +53,6 @@ set nolist
 nnoremap ' `
 nnoremap ` '
 
-" for supertab: make it context sensitive
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
-set completeopt=menuone,longest,preview
-
-" close the completion window when the cursor moves
-" autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-
 " python settings
 let python_highlight_all=1
 let python_highlight_builtins=1
@@ -90,6 +82,17 @@ autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
 
 " processing
 let processing_doc_path="/home/igor47/software/processing/modes/java/reference"
+
+" for supertab: make it context sensitive
+let g:SuperTabDefaultCompletionType = "context"
+if exists("g:omnifunc")
+   let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+endif
+
+set completeopt=menuone,longest,preview                  " show a menu, select the longest match, and show preview window 
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif " close preview when the cursor moves
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif  " close preview when leaving insert
+
 
 " help work with folds
 nmap <leader>f0 :set foldlevel=0<CR>
