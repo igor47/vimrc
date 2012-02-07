@@ -21,7 +21,7 @@ set smartcase
 set hlsearch      " highlight as we search
 
 set title         " set windows title
-set hidden        " allow hidden buffers
+set nohidden        " disallow hidden buffers
 set winminheight=0 " enable 0-height windows
 set scrolloff=3   " scroll before reaching the bottom
 set visualbell    " visual bell
