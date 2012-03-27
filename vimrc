@@ -67,6 +67,9 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 " php settings
 let php_folding = 0
 let php_strict_blocks = 0
+let php_htmlInStrings = 1
+let php_baselib = 1
+let php_sql_query = 1
 
 " php-specific stuff
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
