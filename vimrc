@@ -54,6 +54,9 @@ set nolist
 nnoremap ' `
 nnoremap ` '
 
+"remove trailing whitespace
+autocmd FileType python,php autocmd BufWritePre <buffer> :%s/\s\+$//e
+
 " python settings
 let python_highlight_all=1
 let python_highlight_builtins=1
