@@ -39,6 +39,7 @@ filetype indent on
 " turn on indentation
 set autoindent
 set foldmethod=indent
+set foldignore=
 
 " my tab/whitespace settings: 3 spaces per tab
 set tabstop=3
