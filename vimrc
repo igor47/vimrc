@@ -3,6 +3,9 @@ let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'minibufexpl')
 call pathogen#infect()
 
+" use leo as default colorscheme
+colorscheme leo
+
 " my <leader> character for custom commands
 let mapleader = ","
 "set rulerformat=%<%{fugitive#statusline()}:%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
