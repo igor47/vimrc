@@ -40,6 +40,3 @@
 [submodule "bundle/gnupg"]
 	path = bundle/gnupg
 	url = https://github.com/vim-scripts/gnupg.vim
-[submodule "bundle/local-vimrc"]
-	path = bundle/local-vimrc
-	url = https://github.com/igor47/vim-addon-local-vimrc
