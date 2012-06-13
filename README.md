@@ -9,6 +9,7 @@ How to use
 ---------
 
     git clone <this repo> ~/.vim
+    pushd ~/.vim && git submodule init && git submodule update && popd
     mv ~/.vimrc ~/.vimrc.bak
     ln -s ~/.vim/vimrc ~/.vimrc
 
