@@ -57,6 +57,9 @@ set nolist
 nnoremap ' `
 nnoremap ` '
 
+"don't expand tabs for makefiles
+autocmd FileType make set noexpandtab
+
 "remove trailing whitespace
 autocmd FileType python,php autocmd BufWritePre <buffer> :%s/\s\+$//e
 
@@ -92,6 +95,11 @@ autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
 
 " processing
 let processing_doc_path="/home/igor47/software/processing/modes/java/reference"
+
+" for pig
+augroup filetypedetect
+   au BufNewFile,BufRead *.pig set filetype=pig syntax=pig
+augroup END
 
 " for supertab: make it context sensitive
 let g:SuperTabDefaultCompletionType = "context"
