@@ -32,7 +32,7 @@ set showcmd       " show the command i'm about to use as i type it
 set tildeop       " ~ behaves like an operator 
 set shortmess+=filmnrxoOtT " shorten the interactive prompts a bit
 set history=1000  " longer command history
-set mouse=a
+set mouse=
 
 " automatically deal with files of different type
 syntax on
@@ -96,9 +96,10 @@ autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
 " processing
 let processing_doc_path="/home/igor47/software/processing/modes/java/reference"
 
-" for pig
+" random syntax settings
 augroup filetypedetect
    au BufNewFile,BufRead *.pig set filetype=pig syntax=pig
+   au BufNewFile,BufRead *.gradle set filetype=groovy syntax=groovy
 augroup END
 
 " for supertab: make it context sensitive
