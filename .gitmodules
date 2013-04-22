@@ -58,3 +58,6 @@
 [submodule "bundle/indentanything"]
 	path = bundle/indentanything
 	url = https://github.com/vim-scripts/IndentAnything.git
+[submodule "bundle/multiple-cursors"]
+	path = bundle/multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors.git
