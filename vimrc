@@ -61,7 +61,7 @@ nnoremap ` '
 autocmd FileType make set noexpandtab
 
 "remove trailing whitespace
-autocmd FileType python,php autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType python,php,ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " python settings
 let python_highlight_all=1
