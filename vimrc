@@ -33,6 +33,8 @@ set tildeop       " ~ behaves like an operator
 set shortmess+=filmnrxoOtT " shorten the interactive prompts a bit
 set history=1000  " longer command history
 set mouse=
+set tabpagemax=50 " 50 tabs max instead of the default 10
+
 
 " automatically deal with files of different type
 syntax on
