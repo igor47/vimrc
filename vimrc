@@ -47,9 +47,27 @@ set foldmethod=indent
 set foldignore=
 
 " my tab/whitespace settings: 3 spaces per tab
-set tabstop=3
-set shiftwidth=3
+set tabstop=2
+set shiftwidth=2
 set expandtab
+
+" settings for ctrl-p
+let g:ctrlp_lazy_update = 100 " refresh at max 10Hz 
+
+" accept opens in a new tab
+let g:ctrlp_prompt_mappings = {
+         \ 'AcceptSelection("e")': ['<c-e>'],
+         \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+         \ }
+
+" listing commands for VCS with fallback
+let g:ctrlp_user_command = {
+      \ 'types': {
+         \ 1: ['.git', 'cd %s && git ls-files'],
+         \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+      \ },
+      \ 'fallback': 'find %s -type f | egrep -iv "(\.(eot|gif|gz|ico|jpg|jpeg|otf|png|psd|pyc|svg|ttf|woff|zip)$)"'
+   \ }
 
 " the list
 set list listchars=tab:>-,trail:-
