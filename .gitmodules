@@ -31,9 +31,6 @@
 [submodule "bundle/gesession"]
 	path = bundle/gesession
 	url = https://github.com/c9s/gsession.vim
-[submodule "bundle/gsession"]
-	path = bundle/gsession
-	url = https://github.com/c9s/gsession.vim
 [submodule "bundle/gnupg"]
 	path = bundle/gnupg
 	url = https://github.com/vim-scripts/gnupg.vim
