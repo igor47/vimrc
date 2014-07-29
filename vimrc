@@ -150,6 +150,7 @@ map <F5> <ESC>:set foldmethod=indent<CR>zmzrzv
 
 " clear highlighted search
 nmap <silent> <leader>/ :nohlsearch<CR>
+nmap <leader>n :echo @%<CR>
 
 " Wrapped lines goes down/up to next row, rather than next line in file.
 nnoremap j gj
