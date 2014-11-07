@@ -23,6 +23,8 @@ set ignorecase    " smart case searching
 set smartcase
 set hlsearch      " highlight as we search
 
+set backspace=indent,eol,start " allow backspacing over previous text
+
 set title         " set windows title
 set nohidden        " disallow hidden buffers
 set winminheight=0 " enable 0-height windows
