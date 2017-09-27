@@ -52,6 +52,8 @@ set foldignore=
 set tabstop=2
 set shiftwidth=2
 set expandtab
+" some installs of vim come with ftplugins that force their own settings >:-|
+let g:python_recommended_style=0
 
 " settings for ctrl-p
 let g:ctrlp_lazy_update = 100 " refresh at max 10Hz 
