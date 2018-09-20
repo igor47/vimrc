@@ -14,7 +14,6 @@ Plug 'tpope/vim-git'
 Plug 'spf13/PIV'
 Plug 'c9s/gsession.vim'
 Plug 'vim-scripts/gnupg.vim'
-Plug 'igor47/matchparenpp'
 Plug 'igor47/vim-addon-local-vimrc'
 Plug 'pangloss/vim-javascript'
 Plug 'matthias-guenther/hammer.vim'
@@ -28,6 +27,9 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
 Plug 'ap/vim-css-color'
 Plug 'GutenYe/json5.vim'
+
+" allows matching begin/end blocks and symbols
+Plug 'andymass/vim-matchup'
 
 " done with plugins
 call plug#end()
