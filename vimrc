@@ -1,7 +1,36 @@
-"load pathogen, which will load all the other modules in bundle/
-let g:pathogen_disabled = []
-call add(g:pathogen_disabled, 'minibufexpl')
-call pathogen#infect()
+" load plug.vim
+" https://github.com/junegunn/vim-plug
+call plug#begin('~/.vim/plugged')
+
+" add our plugins
+Plug 'tpope/vim-fugitive'
+Plug 'msanders/snipmate.vim'
+Plug 'tpope/vim-surround'
+Plug 'mitechie/pyflakes-pathogen'
+Plug 'vim-scripts/pep8'
+Plug 'ervandew/supertab'
+Plug 'fs111/pydoc.vim'
+Plug 'tpope/vim-git'
+Plug 'spf13/PIV'
+Plug 'c9s/gsession.vim'
+Plug 'vim-scripts/gnupg.vim'
+Plug 'igor47/matchparenpp'
+Plug 'igor47/vim-addon-local-vimrc'
+Plug 'pangloss/vim-javascript'
+Plug 'matthias-guenther/hammer.vim'
+Plug 'tpope/vim-markdown'
+Plug 'vim-scripts/Align'
+Plug 'vim-scripts/IndentAnything'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'kien/ctrlp.vim'
+Plug 'kchmck/vim-coffee-script'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'mxw/vim-jsx'
+Plug 'ap/vim-css-color'
+Plug 'GutenYe/json5.vim'
+
+" done with plugins
+call plug#end()
 
 " use leo as default colorscheme
 colorscheme leo
