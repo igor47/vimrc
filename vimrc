@@ -204,3 +204,6 @@ nmap <leader>s :%s/\<<C-r><C-w>\>/
 " Wrapped lines goes down/up to next row, rather than next line in file.
 nnoremap j gj
 nnoremap k gk
+
+" maybe help with touchbar horribleness
+:imap jk <Esc>
