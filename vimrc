@@ -90,7 +90,7 @@ set autoindent
 set foldmethod=indent
 set foldignore=
 
-" my tab/whitespace settings: 3 spaces per tab
+" my tab/whitespace settings: 2 spaces per tab
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -196,7 +196,10 @@ map <F5> <ESC>:set foldmethod=indent<CR>zmzrzv
 
 " clear highlighted search
 nmap <silent> <leader>/ :nohlsearch<CR>
+" echo current filename
 nmap <leader>n :echo @%<CR>
+" search and replace word under cursor
+nmap <leader>s :%s/\<<C-r><C-w>\>/
 
 " Wrapped lines goes down/up to next row, rather than next line in file.
 nnoremap j gj
