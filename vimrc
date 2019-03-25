@@ -3,6 +3,7 @@
 call plug#begin('~/.vim/plugged')
 
 " add our plugins
+Plug 'leafgarland/typescript-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'msanders/snipmate.vim'
 Plug 'tpope/vim-surround'
