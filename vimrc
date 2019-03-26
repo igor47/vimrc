@@ -35,7 +35,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'kchmck/vim-coffee-script'
 
 " for templating/editing HTML
-Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'ap/vim-css-color'
 Plug 'mustache/vim-mustache-handlebars'
 
