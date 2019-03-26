@@ -7,7 +7,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'vim-python/python-syntax'
 Plug 'fs111/pydoc.vim'
-Plug 'mitechie/pyflakes-pathogen'
+Plug 'vim-scripts/pep8'
 
 " for javascript/typescript/react
 Plug 'leafgarland/typescript-vim'
@@ -25,7 +25,6 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'tpope/vim-fugitive'
 Plug 'msanders/snipmate.vim'
 Plug 'tpope/vim-surround'
-Plug 'vim-scripts/pep8'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-git'
 Plug 'spf13/PIV'
