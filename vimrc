@@ -138,7 +138,7 @@ let g:ale_lint_on_text_changed = 'never'  " only lint when we save, not as we ty
 " python settings
 let python_highlight_all=1
 let python_highlight_builtins=1
-let g:ale_python_pylint_options = '-E'  " ale only shows errors
+let g:ale_python_pylint_options = '--errors-only --disable=E0402'
 let g:pep8_map='<leader>8'
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
