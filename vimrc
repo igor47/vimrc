@@ -3,6 +3,21 @@
 call plug#begin('~/.vim/plugged')
 
 " add our plugins
+" vim functionality features
+Plug 'tpope/vim-fugitive'
+Plug 'msanders/snipmate.vim'
+Plug 'tpope/vim-surround'
+Plug 'ervandew/supertab'
+Plug 'tpope/vim-git'
+Plug 'spf13/PIV'
+Plug 'c9s/gsession.vim'
+Plug 'vim-scripts/gnupg.vim'
+Plug 'MarcWeber/vim-addon-local-vimrc'
+Plug 'vim-scripts/Align'
+Plug 'vim-scripts/IndentAnything'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'kien/ctrlp.vim'
+
 " python-related
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'vim-python/python-syntax'
@@ -21,21 +36,8 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'ap/vim-css-color'
 Plug 'mustache/vim-mustache-handlebars'
 
-" unsorted
-Plug 'tpope/vim-fugitive'
-Plug 'msanders/snipmate.vim'
-Plug 'tpope/vim-surround'
-Plug 'ervandew/supertab'
-Plug 'tpope/vim-git'
-Plug 'spf13/PIV'
-Plug 'c9s/gsession.vim'
-Plug 'vim-scripts/gnupg.vim'
-Plug 'MarcWeber/vim-addon-local-vimrc'
-Plug 'tpope/vim-markdown'
-Plug 'vim-scripts/Align'
-Plug 'vim-scripts/IndentAnything'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'kien/ctrlp.vim'
+" other syntax highlighting
+Plug 'gabrielelana/vim-markdown'
 Plug 'GutenYe/json5.vim'
 
 " allows matching begin/end blocks and symbols
@@ -57,7 +59,7 @@ set ruler
 set rulerformat=%36(%=%{fugitive#statusline()}\:b%n%m%r%w\ %4l,%-7(%c%V%)\ %P%)
 let MP_rulerwidth=36   "the matchparen plugin needs to know the width of the ruler
 
-set wildmenu      " change behavior of file tab completion 
+set wildmenu      " change behavior of file tab completion
 set wildmode=list:longest
 
 set ignorecase    " smart case searching
@@ -72,7 +74,7 @@ set winminheight=0 " enable 0-height windows
 set scrolloff=3   " scroll before reaching the bottom
 set visualbell    " visual bell
 set showcmd       " show the command i'm about to use as i type it
-set tildeop       " ~ behaves like an operator 
+set tildeop       " ~ behaves like an operator
 set shortmess+=filmnrxoOtT " shorten the interactive prompts a bit
 set history=1000  " longer command history
 set mouse=
@@ -97,7 +99,7 @@ set expandtab
 let g:python_recommended_style=0
 
 " settings for ctrl-p
-let g:ctrlp_lazy_update = 100 " refresh at max 10Hz 
+let g:ctrlp_lazy_update = 100 " refresh at max 10Hz
 
 " accept opens in a new tab
 let g:ctrlp_prompt_mappings = {
@@ -173,7 +175,7 @@ if exists("g:omnifunc")
    let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 endif
 
-set completeopt=menuone,longest,preview                  " show a menu, select the longest match, and show preview window 
+set completeopt=menuone,longest,preview                  " show a menu, select the longest match, and show preview window
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif " close preview when the cursor moves
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif  " close preview when leaving insert
 
