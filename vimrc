@@ -18,6 +18,9 @@ Plug 'vim-scripts/IndentAnything'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'kien/ctrlp.vim'
 
+" language-independent syntax checking
+Plug 'w0rp/ale'
+
 " python-related
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'vim-python/python-syntax'
@@ -130,10 +133,13 @@ autocmd FileType make set noexpandtab
 "remove trailing whitespace
 autocmd FileType python,php,ruby,javascript,javascript.jsx autocmd BufWritePre <buffer> :%s/\s\+$//e
 
+" settings for ale (syntax, etc.)
+let g:ale_lint_on_text_changed = 'never'  " only lint when we save, not as we type
+
 " python settings
 let python_highlight_all=1
 let python_highlight_builtins=1
-let g:pyflakes_use_quickfix = 0  " turn off quickfix window for pyflakes
+let g:ale_python_pylint_options = '-E'  " ale only shows errors
 let g:pep8_map='<leader>8'
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
