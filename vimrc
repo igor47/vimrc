@@ -45,6 +45,11 @@ Plug 'GutenYe/json5.vim'
 " allows matching begin/end blocks and symbols
 Plug 'andymass/vim-matchup'
 
+" some color schemes
+Plug 'Dru89/vim-adventurous'
+Plug 'reewr/vim-monokai-phoenix'
+Plug 'Zabanaa/neuromancer.vim'
+
 " done with plugins
 call plug#end()
 
