@@ -25,7 +25,7 @@ Plug 'w0rp/ale'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'vim-python/python-syntax'
 Plug 'fs111/pydoc.vim'
-Plug 'vim-scripts/pep8'
+Plug 'ambv/black'
 
 " for javascript/typescript/react
 Plug 'leafgarland/typescript-vim'
