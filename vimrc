@@ -12,7 +12,7 @@ Plug 'tpope/vim-git'
 Plug 'spf13/PIV'
 Plug 'c9s/gsession.vim'
 Plug 'vim-scripts/gnupg.vim'
-Plug 'MarcWeber/vim-addon-local-vimrc'
+Plug 'embear/vim-localvimrc'
 Plug 'vim-scripts/Align'
 Plug 'vim-scripts/IndentAnything'
 Plug 'terryma/vim-multiple-cursors'
@@ -50,6 +50,11 @@ call plug#end()
 
 " use leo as default colorscheme
 colorscheme leo
+
+" make local vimrc remember my answers (if answered in uppercase)
+let g:localvimrc_persistent=1
+" local vimrc file name can also be '.vimrc.local'
+let g:localvimrc_name=[".lvimrc", ".vimrc.local"]
 
 " my <leader> character for custom commands
 let mapleader = ","
