@@ -4,28 +4,37 @@ call plug#begin('~/.vim/plugged')
 
 " add our plugins
 " vim functionality features
-Plug 'tpope/vim-fugitive'
 Plug 'msanders/snipmate.vim'
 Plug 'tpope/vim-surround'
 Plug 'ervandew/supertab'
-Plug 'tpope/vim-git'
-Plug 'spf13/PIV'
 Plug 'c9s/gsession.vim'
 Plug 'vim-scripts/gnupg.vim'
-Plug 'embear/vim-localvimrc'
 Plug 'vim-scripts/Align'
 Plug 'vim-scripts/IndentAnything'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'kien/ctrlp.vim'
 
+" sources local vimrc files
+Plug 'embear/vim-localvimrc'
+
+" git related
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+
 " language-independent syntax checking
 Plug 'w0rp/ale'
 
+" php
+Plug 'spf13/PIV'
+
 " python-related
+" first, support pyenv, then other python plugins
+Plug 'lambdalisue/vim-pyenv'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'vim-python/python-syntax'
 Plug 'fs111/pydoc.vim'
 Plug 'ambv/black'
+Plug 'davidhalter/jedi-vim'
 
 " for javascript/typescript/react
 Plug 'leafgarland/typescript-vim'
@@ -145,7 +154,6 @@ let python_highlight_all=1
 let python_highlight_builtins=1
 let g:ale_python_pylint_options = '--errors-only --disable=E0402 --enable=W0611'
 let g:pep8_map='<leader>8'
-autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 " php settings
 let php_folding = 0
