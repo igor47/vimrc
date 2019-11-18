@@ -37,11 +37,9 @@ Plug 'ambv/black'
 Plug 'davidhalter/jedi-vim'
 
 " for javascript/typescript/react
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'kchmck/vim-coffee-script'
+Plug 'MaxMEllon/vim-jsx-pretty'
 
 " for templating/editing HTML
 Plug 'ap/vim-css-color'
