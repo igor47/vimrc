@@ -41,6 +41,7 @@ let g:jedi#use_tabs_not_buffers = 1
 
 
 " for javascript/typescript/react
+Plug 'posva/vim-vue'
 Plug 'pangloss/vim-javascript'
 Plug 'kchmck/vim-coffee-script'
 Plug 'MaxMEllon/vim-jsx-pretty'
