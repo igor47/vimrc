@@ -34,7 +34,11 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'vim-python/python-syntax'
 Plug 'fs111/pydoc.vim'
 Plug 'ambv/black'
+
 Plug 'davidhalter/jedi-vim'
+let g:jedi#usages_command = "<leader>u"   " usages command from <leader>n
+let g:jedi#use_tabs_not_buffers = 1
+
 
 " for javascript/typescript/react
 Plug 'pangloss/vim-javascript'
@@ -146,6 +150,8 @@ autocmd FileType python,php,ruby,javascript,javascript.jsx autocmd BufWritePre <
 
 " settings for ale (syntax, etc.)
 let g:ale_lint_on_text_changed = 'never'  " only lint when we save, not as we type
+nmap <silent> <leader>aj :ALENext<cr>
+nmap <silent> <leader>ak :ALEPrevious<cr>
 
 " python settings
 let python_highlight_all=1
