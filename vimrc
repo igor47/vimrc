@@ -29,7 +29,7 @@ Plug 'spf13/PIV'
 
 " python-related
 " first, support pyenv, then other python plugins
-Plug 'lambdalisue/vim-pyenv'
+" Plug 'lambdalisue/vim-pyenv'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'vim-python/python-syntax'
 Plug 'fs111/pydoc.vim'
@@ -51,11 +51,14 @@ Plug 'ap/vim-css-color'
 Plug 'mustache/vim-mustache-handlebars'
 
 " other syntax highlighting
-Plug 'gabrielelana/vim-markdown'
+" Plug 'gabrielelana/vim-markdown'
 Plug 'GutenYe/json5.vim'
 
 " allows matching begin/end blocks and symbols
 Plug 'andymass/vim-matchup'
+
+" vim wiki
+Plug 'vimwiki/vimwiki'
 
 " done with plugins
 call plug#end()
@@ -202,6 +205,13 @@ set completeopt=menuone,longest,preview                  " show a menu, select t
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif " close preview when the cursor moves
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif  " close preview when leaving insert
 
+" vimwiki settings
+let g:markdown_enable_mappings = 0  " avoids conflicts with vimwki and markdown highlighting
+let g:vimwiki_list = [{
+      \ 'path': '~/documents/vimwiki/',
+      \ 'syntax': 'markdown',
+      \ 'ext': '.md',
+      \ }]
 
 " help work with folds
 nmap <leader>f0 :set foldlevel=0<CR>
