@@ -33,7 +33,7 @@ Plug 'spf13/PIV'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'vim-python/python-syntax'
 Plug 'fs111/pydoc.vim'
-Plug 'ambv/black'
+Plug 'ambv/black', { 'on': 'Black' }
 
 Plug 'davidhalter/jedi-vim'
 let g:jedi#usages_command = "<leader>u"   " usages command from <leader>n
