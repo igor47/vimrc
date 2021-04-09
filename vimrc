@@ -60,6 +60,9 @@ Plug 'andymass/vim-matchup'
 " vim wiki
 Plug 'vimwiki/vimwiki'
 
+" look up addresses with notmuch
+Plug 'Konfekt/vim-notmuch-addrlookup'
+
 " done with plugins
 call plug#end()
 
