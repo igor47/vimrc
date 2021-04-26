@@ -15,6 +15,8 @@ To install the repo:
 
 Then, open vim and run `PlugInstall`.
 
+To use fzf to open files with ctrl-p (for files in git) and ctrl-o (files in the filesystem), you'll need to have fzf installed.
+
 Caveats
 -------
 

@@ -12,10 +12,13 @@ Plug 'vim-scripts/gnupg.vim'
 Plug 'vim-scripts/Align'
 Plug 'vim-scripts/IndentAnything'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'kien/ctrlp.vim'
 
 " sources local vimrc files
 Plug 'embear/vim-localvimrc'
+
+" fzf to quickly open local files
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 
 " git related
 Plug 'tpope/vim-fugitive'
@@ -123,23 +126,18 @@ set expandtab
 " some installs of vim come with ftplugins that force their own settings >:-|
 let g:python_recommended_style=0
 
-" settings for ctrl-p
-let g:ctrlp_lazy_update = 100 " refresh at max 10Hz
+" use fzf to quickly open files
+" map to ctrl-p (used in git repos)
+nnoremap <C-p> :GFiles<CR>
+" map to ctrl-o (for Open, any files in dir/subdir)
+nnoremap <C-o> :Files<CR>
 
-" accept opens in a new tab
-let g:ctrlp_prompt_mappings = {
-         \ 'AcceptSelection("e")': ['<c-e>'],
-         \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
-         \ }
-
-" listing commands for VCS with fallback
-let g:ctrlp_user_command = {
-      \ 'types': {
-         \ 1: ['.git', 'cd %s && git ls-files'],
-         \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-      \ },
-      \ 'fallback': 'find %s -type f | egrep -iv "(\.(eot|gif|gz|ico|jpg|jpeg|otf|png|psd|pyc|svg|ttf|woff|zip)$)"'
-   \ }
+" default open action opens in new tab
+let g:fzf_action = {
+      \ 'enter': 'tab split',
+      \ 'ctrl-o': 'e',
+      \ 'ctrl-x': 'split',
+      \ 'ctrl-v': 'vsplit' }
 
 " the list
 set list listchars=tab:>-,trail:-
