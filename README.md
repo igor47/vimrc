@@ -1,17 +1,19 @@
 My vim config
 =============
 
-I do all of my work in the latest possible version of Vim. I usually run Vim
-inside tmux, with which I interact via semi-transparent, 256-color, unicode
-xterm. Many of my settings, including color settings, reflect this. I prefer tabs to buffers, and there is much integration with git.
+I do all of my work in the latest possible version of Vim.
+I usually run Vim inside tmux, itself run in alacritty.
+My Alacritty config is in my [dotfiles repo](https://github.com/igor47/dotfiles).
 
 How to use
 ---------
 
-    git clone <this repo> ~/.vim
-    pushd ~/.vim && git submodule init && git submodule update && popd
-    mv ~/.vimrc ~/.vimrc.bak
-    ln -s ~/.vim/vimrc ~/.vimrc
+To install the repo:
+
+    git clone <this repo> ~/repos/
+    pushd ~ && ln -s ~/reps/vimrc .vim && ln -s ~/.vim/vimrc ~/.vimrc && popd
+
+Then, open vim and run `PlugInstall`.
 
 Caveats
 -------
