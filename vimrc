@@ -108,6 +108,9 @@ set history=1000  " longer command history
 set mouse=
 set tabpagemax=50 " 50 tabs max instead of the default 10
 
+" default to system clipboard
+set clipboard=unnamedplus
+
 
 " automatically deal with files of different type
 syntax on
@@ -119,9 +122,9 @@ set autoindent
 set foldmethod=indent
 set foldignore=
 
-" my tab/whitespace settings: 2 spaces per tab
-set tabstop=2
-set shiftwidth=2
+" my tab/whitespace settings: 4 spaces per tab (to comply with black)
+set tabstop=4
+set shiftwidth=4
 set expandtab
 " some installs of vim come with ftplugins that force their own settings >:-|
 let g:python_recommended_style=0
