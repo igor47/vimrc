@@ -97,7 +97,6 @@ set hlsearch      " highlight as we search
 set backspace=indent,eol,start " allow backspacing over previous text
 
 set title         " set windows title
-set nohidden        " disallow hidden buffers
 set winminheight=0 " enable 0-height windows
 set scrolloff=3   " scroll before reaching the bottom
 set visualbell    " visual bell
@@ -130,17 +129,14 @@ set expandtab
 let g:python_recommended_style=0
 
 " use fzf to quickly open files
+" for more commands, see: https://github.com/junegunn/fzf.vim#commands
+"
 " map to ctrl-p (used in git repos)
 nnoremap <C-p> :GFiles<CR>
-" map to ctrl-o (for Open, any files in dir/subdir)
-nnoremap <C-o> :Files<CR>
-
-" default open action opens in new tab
-let g:fzf_action = {
-      \ 'enter': 'tab split',
-      \ 'ctrl-o': 'e',
-      \ 'ctrl-x': 'split',
-      \ 'ctrl-v': 'vsplit' }
+" map to ctrl-P (capital-P, any files in dir/subdir)
+nnoremap <C-P> :Files<CR>
+" browse open buffers
+nmap <leader>b :Buffers<cr>
 
 " the list
 set list listchars=tab:>-,trail:-
