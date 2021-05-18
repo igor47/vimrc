@@ -1,3 +1,6 @@
+" just in case
+set nocompatible
+
 " load plug.vim
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
@@ -6,12 +9,16 @@ call plug#begin('~/.vim/plugged')
 " vim functionality features
 Plug 'msanders/snipmate.vim'
 Plug 'tpope/vim-surround'
-Plug 'ervandew/supertab'
 Plug 'c9s/gsession.vim'
-Plug 'vim-scripts/gnupg.vim'
 Plug 'vim-scripts/Align'
 Plug 'vim-scripts/IndentAnything'
 Plug 'terryma/vim-multiple-cursors'
+
+" super tab completion
+Plug 'ervandew/supertab'
+
+" editing pgp-encrypted files
+Plug 'vim-scripts/gnupg.vim'
 
 " sources local vimrc files
 Plug 'embear/vim-localvimrc'
@@ -25,37 +32,21 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 
 " language-independent syntax checking
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
+
+" language-independent syntax highlighting
+Plug 'sheerun/vim-polyglot'
 
 " php
 Plug 'spf13/PIV'
 
 " python-related
-" first, support pyenv, then other python plugins
-" Plug 'lambdalisue/vim-pyenv'
 Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'vim-python/python-syntax'
-Plug 'fs111/pydoc.vim'
 Plug 'ambv/black', { 'on': 'Black' }
-
 Plug 'davidhalter/jedi-vim'
-let g:jedi#usages_command = "<leader>u"   " usages command from <leader>n
-let g:jedi#use_tabs_not_buffers = 1
-
-
-" for javascript/typescript/react
-Plug 'posva/vim-vue'
-Plug 'pangloss/vim-javascript'
-Plug 'kchmck/vim-coffee-script'
-Plug 'MaxMEllon/vim-jsx-pretty'
 
 " for templating/editing HTML
 Plug 'ap/vim-css-color'
-Plug 'mustache/vim-mustache-handlebars'
-
-" other syntax highlighting
-" Plug 'gabrielelana/vim-markdown'
-Plug 'GutenYe/json5.vim'
 
 " allows matching begin/end blocks and symbols
 Plug 'andymass/vim-matchup'
@@ -156,6 +147,9 @@ autocmd FileType python,php,ruby,javascript,javascript.jsx autocmd BufWritePre <
 let g:ale_lint_on_text_changed = 'never'  " only lint when we save, not as we type
 nmap <silent> <leader>aj :ALENext<cr>
 nmap <silent> <leader>ak :ALEPrevious<cr>
+nmap <silent> <leader>ag :ALEGoToDefinition<cr>
+nmap <silent> <leader>ad :ALEDetail<cr>
+nmap <silent> <leader>al :ALELint<cr>
 
 " python settings
 let python_highlight_all=1
