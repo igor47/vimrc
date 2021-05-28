@@ -80,7 +80,7 @@ set wildmode=list:longest
 set ignorecase    " smart case searching
 set smartcase
 set hlsearch      " highlight as we search
-nmap <silent> <leader>/ :nohlsearch<CR> " clear highlighted search
+nmap <silent> <nowait> <leader>/ :nohlsearch<CR> " clear highlighted search
 
 set backspace=indent,eol,start " allow backspacing over previous text
 
@@ -125,7 +125,7 @@ let g:python_recommended_style=0
 " map to ctrl-p (used in git repos)
 nnoremap <C-p> :GFiles<CR>
 " map to ctrl-P (capital-P, any files in dir/subdir)
-nnoremap <C-P> :Files<CR>
+nmap <leader>p :Files<CR>
 " browse open buffers
 nmap <leader>b :Buffers<cr>
 
@@ -150,12 +150,24 @@ nmap <silent> <leader>ak :ALEPrevious<cr>
 nmap <silent> <leader>ag :ALEGoToDefinition<cr>
 nmap <silent> <leader>ad :ALEDetail<cr>
 nmap <silent> <leader>al :ALELint<cr>
+nmap <silent> <leader>ak :ALEDocumentation<cr>
+nmap <silent> <leader>ar :ALERename<cr>
+nmap <silent> <leader>ac :ALEComplete<cr>
 
 " python settings
 let python_highlight_all=1
 let python_highlight_builtins=1
 let g:ale_python_pylint_options = '--errors-only --disable=E0402 --enable=W0611'
-let g:pep8_map='<leader>8'
+
+" jedi overrides some more generic ALE settings
+let g:jedi#goto_command = ""
+let g:jedi#goto_assignments_command = "<leader>ag"
+let g:jedi#goto_stubs_command = ""
+let g:jedi#goto_definitions_command = ""
+let g:jedi#documentation_command = "<leader>ak"
+let g:jedi#usages_command = "<leader>au"
+let g:jedi#completions_command = "<C-Space>"
+let g:jedi#rename_command = "<leader>ar"
 
 " php settings
 let php_folding = 0
