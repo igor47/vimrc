@@ -70,20 +70,22 @@ let g:localvimrc_name=[".lvimrc", ".vimrc.local"]
 
 " my <leader> character for custom commands
 let mapleader = ","
-"set rulerformat=%<%{fugitive#statusline()}:%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 "always enable theruler
 set laststatus=0  " always disable laststatus
 set ruler
 set rulerformat=%36(%=%{fugitive#statusline()}\:b%n%m%r%w\ %4l,%-7(%c%V%)\ %P%)
+"set rulerformat=%<%{fugitive#statusline()}:%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 let MP_rulerwidth=36   "the matchparen plugin needs to know the width of the ruler
 
 set wildmenu      " change behavior of file tab completion
 set wildmode=list:longest
 
+" searching
 set ignorecase    " smart case searching
 set smartcase
 set hlsearch      " highlight as we search
+nmap <silent> <leader>/ :nohlsearch<CR> " clear highlighted search
 
 set backspace=indent,eol,start " allow backspacing over previous text
 
@@ -96,7 +98,10 @@ set tildeop       " ~ behaves like an operator
 set shortmess+=filmnrxoOtT " shorten the interactive prompts a bit
 set history=1000  " longer command history
 set mouse=
+
+" tabs and buffers
 set tabpagemax=50 " 50 tabs max instead of the default 10
+set hidden        " allow hidden buffers
 
 " default to system clipboard
 set clipboard=unnamedplus
@@ -222,8 +227,6 @@ nmap <leader>f9 :set foldlevel=9<CR>
 " reset folds with a single button (F5)
 map <F5> <ESC>:set foldmethod=indent<CR>zmzrzv
 
-" clear highlighted search
-nmap <silent> <leader>/ :nohlsearch<CR>
 " echo current filename
 nmap <leader>n :echo @%<CR>
 " search and replace word under cursor
@@ -235,3 +238,7 @@ nnoremap k gk
 
 " maybe help with touchbar horribleness
 :imap jk <Esc>
+
+" helps with my split-key keyboard where Esc is pretty far
+map <F1> <Esc>
+imap <F1> <Esc>
