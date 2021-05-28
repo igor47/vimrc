@@ -7,12 +7,8 @@ call plug#begin('~/.vim/plugged')
 
 " add our plugins
 " vim functionality features
-Plug 'msanders/snipmate.vim'
 Plug 'tpope/vim-surround'
 Plug 'c9s/gsession.vim'
-Plug 'vim-scripts/Align'
-Plug 'vim-scripts/IndentAnything'
-Plug 'terryma/vim-multiple-cursors'
 
 " super tab completion
 Plug 'ervandew/supertab'
@@ -41,7 +37,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'spf13/PIV'
 
 " python-related
-Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'ambv/black', { 'on': 'Black' }
 Plug 'davidhalter/jedi-vim'
 
