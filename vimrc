@@ -57,6 +57,8 @@ call plug#end()
 
 " use leo as default colorscheme
 colorscheme leo
+" transparent background to better indicate tmux inactive panes
+hi Normal guibg=NONE ctermbg=NONE
 
 " make local vimrc remember my answers (if answered in uppercase)
 let g:localvimrc_persistent=1
