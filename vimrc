@@ -85,6 +85,7 @@ set hlsearch      " highlight as we search
 nmap <silent> <nowait> <leader>/ :nohlsearch<CR> " clear highlighted search
 
 set backspace=indent,eol,start " allow backspacing over previous text
+set nojoinspaces  " only one space after '.'
 
 set title         " set windows title
 set winminheight=0 " enable 0-height windows
