@@ -5,14 +5,6 @@ set nocompatible
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
 
-" add our plugins
-" vim functionality features
-Plug 'tpope/vim-surround'
-Plug 'c9s/gsession.vim'
-
-" super tab completion
-Plug 'ervandew/supertab'
-
 " editing pgp-encrypted files
 Plug 'vim-scripts/gnupg.vim'
 
@@ -27,27 +19,14 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 
-" language-independent syntax checking
-Plug 'dense-analysis/ale'
-
 " language-independent syntax highlighting
 Plug 'sheerun/vim-polyglot'
-
-" php
-Plug 'spf13/PIV'
-
-" python-related
-Plug 'ambv/black', { 'on': 'Black' }
-Plug 'davidhalter/jedi-vim'
 
 " for templating/editing HTML
 Plug 'ap/vim-css-color'
 
 " allows matching begin/end blocks and symbols
 Plug 'andymass/vim-matchup'
-
-" vim wiki
-Plug 'vimwiki/vimwiki'
 
 " look up addresses with notmuch
 Plug 'Konfekt/vim-notmuch-addrlookup'
@@ -146,82 +125,6 @@ autocmd FileType make set noexpandtab
 "remove trailing whitespace
 autocmd FileType python,php,ruby,javascript,javascript.jsx autocmd BufWritePre <buffer> :%s/\s\+$//e
 
-" settings for ale (syntax, etc.)
-let g:ale_lint_on_text_changed = 'never'  " only lint when we save, not as we type
-nmap <silent> <leader>aj :ALENext<cr>
-nmap <silent> <leader>ak :ALEPrevious<cr>
-nmap <silent> <leader>ag :ALEGoToDefinition<cr>
-nmap <silent> <leader>ad :ALEDetail<cr>
-nmap <silent> <leader>al :ALELint<cr>
-nmap <silent> <leader>ak :ALEDocumentation<cr>
-nmap <silent> <leader>ar :ALERename<cr>
-nmap <silent> <leader>ac :ALEComplete<cr>
-
-" python settings
-let python_highlight_all=1
-let python_highlight_builtins=1
-let g:ale_python_pylint_options = '--errors-only --disable=E0402 --enable=W0611'
-
-" jedi overrides some more generic ALE settings
-let g:jedi#goto_command = ""
-let g:jedi#goto_assignments_command = "<leader>ag"
-let g:jedi#goto_stubs_command = ""
-let g:jedi#goto_definitions_command = ""
-let g:jedi#documentation_command = "<leader>ak"
-let g:jedi#usages_command = "<leader>au"
-let g:jedi#completions_command = "<C-Space>"
-let g:jedi#rename_command = "<leader>ar"
-
-" php settings
-let php_folding = 0
-let php_strict_blocks = 0
-let php_htmlInStrings = 1
-let php_baselib = 1
-let php_sql_query = 1
-
-" php-specific stuff
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType php set makeprg=php\ -l\ %
-autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l
-autocmd FileType php let g:DisableAutoPHPFolding = 1
-
-" autocomplete funcs and identifiers for languages
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType c set omnifunc=ccomplete#Complete
-
-"arduino
-autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
-
-" processing
-let processing_doc_path="/home/igor47/software/processing/modes/java/reference"
-
-" random syntax settings
-augroup filetypedetect
-   au BufNewFile,BufRead *.pig set filetype=pig syntax=pig
-   au BufNewFile,BufRead *.gradle set filetype=groovy syntax=groovy
-augroup END
-
-" for supertab: make it context sensitive
-let g:SuperTabDefaultCompletionType = "context"
-if exists("g:omnifunc")
-   let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
-endif
-
-set completeopt=menuone,longest,preview                  " show a menu, select the longest match, and show preview window
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif " close preview when the cursor moves
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif  " close preview when leaving insert
-
-" vimwiki settings
-let g:markdown_enable_mappings = 0  " avoids conflicts with vimwki and markdown highlighting
-let g:vimwiki_list = [{
-      \ 'path': '~/documents/vimwiki/',
-      \ 'syntax': 'markdown',
-      \ 'ext': '.md',
-      \ }]
-
 " help work with folds
 nmap <leader>f0 :set foldlevel=0<CR>
 nmap <leader>f1 :set foldlevel=1<CR>
@@ -245,9 +148,6 @@ nmap <leader>s :%s/\<<C-r><C-w>\>/
 " Wrapped lines goes down/up to next row, rather than next line in file.
 nnoremap j gj
 nnoremap k gk
-
-" maybe help with touchbar horribleness
-:imap jk <Esc>
 
 " helps with my split-key keyboard where Esc is pretty far
 map <F1> <Esc>
